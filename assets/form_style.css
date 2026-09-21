@@ -1,0 +1,180 @@
+.registration-form-container {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.registration-form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    padding: 28px;
+    font-family: 'IBMPlexSansArabic-SemiBold', 'Cairo', sans-serif !important;
+}
+.form-title {
+    color: #147b0e;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.form-subtitle {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+.form-group-custom {
+    margin-bottom: 12px; /* Tightened from 20px */
+    text-align: right;
+}
+.form-group-custom label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+}
+.form-group-custom .required {
+    color: #ef4444;
+}
+.form-group-custom .optional {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+.input-wrapper-custom {
+    position: relative;
+}
+.input-icon-custom {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+.form-group-custom input {
+    width: 100%;
+    padding: 12px 42px 12px 16px !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+    font-size: 0.95rem !important;
+    font-family: 'Cairo', sans-serif !important;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+.form-group-custom input:focus {
+    border-color: #147b0e !important;
+    box-shadow: 0 0 0 3px rgba(20, 123, 14, 0.15) !important;
+    outline: none !important;
+}
+.validation-message {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+.btn-submit-custom {
+    width: 100%;
+    padding: 14px;
+    background-color: #147b0e;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    transition: all 0.2s;
+}
+.btn-submit-custom:hover {
+    background-color: #11620b;
+    box-shadow: 0 4px 12px rgba(20, 123, 14, 0.25);
+}
+.btn-submit-custom:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.secure-footer-custom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 18px;
+}
+.spinner-custom {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin-custom 0.8s linear infinite;
+}
+@keyframes spin-custom {
+    to { transform: rotate(360deg); }
+}
+
+/* Compact Mobile-Only Optimizations */
+@media (max-width: 600px) {
+    .container, .two-col-layout, .main_conts, #PageContent, .news_details, .ms-rtestate-field {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .registration-form-container {
+        margin: 10px auto !important;
+        padding: 0 4px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .registration-form-card {
+        padding: 18px 12px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .form-title {
+        font-size: 1.15rem;
+        margin-bottom: 6px;
+    }
+    .form-subtitle {
+        font-size: 0.82rem;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+    .form-group-custom {
+        margin-bottom: 10px;
+    }
+    .form-group-custom input {
+        padding: 11px 38px 11px 14px !important;
+        font-size: 0.9rem !important;
+        border-radius: 8px !important;
+    }
+    .input-icon-custom {
+        right: 12px;
+        font-size: 1rem;
+    }
+    .btn-submit-custom {
+        padding: 12px;
+        font-size: 0.95rem;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+    .secure-footer-custom {
+        font-size: 0.75rem;
+        margin-top: 12px;
+    }
+}
