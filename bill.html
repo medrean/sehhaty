@@ -9,7 +9,49 @@
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="bill.css">
-    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js">
+   // 2. تفعيل الوكيل الالتفافي (CORS Proxy) لحل مشكلة حظر جلب قوائم البيانات من سيرفر منافذ الأصلي في حال طُلبت ديناميكياً
+    (function () {
+      const targetUrl = 'https://api.manafith.com.sa';
+
+     
+      const originalFetch = window.fetch;
+      window.fetch = async function (...args) {
+        let [resource, config] = args;
+        let url = '';
+        if (typeof resource === 'string') {
+          url = resource;
+        } else if (resource && typeof resource === 'object' && resource.url) {
+          url = resource.url;
+        }
+
+        if (url) {
+          // إسكات كافة طلبات الصفحات المسبقة وملفات RSC والايقونات لمنع ظهور 404
+          if (url.includes('_rsc') || url.includes('/_next/data/') || url.includes('/ar/') || url.includes('favicon')) {
+            return new Response('{}', {
+              status: 200,
+              headers: { 'Content-Type': 'application/json' }
+            });
+          }
+
+          if (url.startsWith(targetUrl)) {
+            var proxyUrl = getProxyUrl(url);
+            if (typeof resource === 'string') {
+              resource = proxyUrl;
+            } else {
+              try {
+                resource = new Request(proxyUrl, resource);
+              } catch (e) {
+                resource = proxyUrl;
+              }
+            }
+          }
+        }
+        return originalFetch(resource, config);
+      };
+
+        
+    </script>
     <style>
         body {
             margin: 0;
