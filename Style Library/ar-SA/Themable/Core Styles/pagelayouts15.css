@@ -1,0 +1,196 @@
+div.article,div.welcome {
+    padding: 10px 0
+}
+
+.article .article-header {
+    zoom:1}
+
+.article-header .date-line {
+    float: right;
+    font-weight: bold
+}
+
+.article .date-line,.article .by-line {
+    padding-left: 10px
+}
+
+.article-header .by-line {
+    text-align: left
+}
+
+.article .captioned-image,.article .related-links,.welcome .welcome-image,.welcome .splash-image {
+    margin-bottom: 5px
+}
+
+.article-left .captioned-image,.welcome .welcome-image {
+    float: right;
+    padding-left: 10px
+}
+
+.article-right .captioned-image,.article .related-links {
+    float: left;
+    padding-right: 10px
+}
+
+.article .related-links {
+    border: 1px solid #c6c6c6;
+    min-width: 150px;
+    width: 150px
+}
+
+.caption p {
+    padding-top: 2px;
+    margin-bottom: 2px
+}
+
+.article-content,.welcome-content {
+    margin: 5px 0 0
+}
+
+.clearer {
+    clear: both
+}
+
+.clear-right {
+    clear: right
+}
+
+.col-50 {
+    float: right;
+    width: 49.9%
+}
+
+.col-33 {
+    float: right;
+    width: 33.2%
+}
+
+.right-bar {
+    float: left;
+    width: 24.9%
+}
+
+.tableCol-75 {
+    display: table-cell;
+    min-width: 74.9%
+}
+
+.tableCol-50 {
+    display: table-cell;
+    min-width: 49.9%
+}
+
+.tableCol-33 {
+    display: table-cell;
+    min-width: 33.2%
+}
+
+.tableCol-25 {
+    display: table-cell;
+    min-width: 24.9%
+}
+
+.main-content {
+    float: right;
+    width: 74.9%
+}
+
+.cell-margin {
+    margin: 5px 0 5px 0
+}
+
+.col-fluid-1 {
+    float: right;
+    width: 100%;
+    margin-left: -235px
+}
+
+.col-fluid-2 {
+    zoom:1;margin-left: 215px
+}
+
+.right-wp-zone-col {
+    float: left;
+    width: 215px;
+    border-right: 1px dashed
+}
+
+.edit-mode-border {
+    border: transparent 1px solid;
+    padding: 8px;
+    margin: 1px
+}
+
+.ewiki-margin {
+    padding: 0 11px 0 0
+}
+
+.ewiki-pagename-align {
+    vertical-align: middle
+}
+
+*:first-child+html .right-wp-zone {
+    width: 100%
+}
+
+.s4-specialNavLinkList {
+    display: none
+}
+
+.ewiki-right-col {
+    width: 198px
+}
+
+.ewiki-slink {
+    margin-right: 10px
+}
+
+.layout-col {
+    display: table-cell
+}
+
+.layout-row {
+    padding-top: 20px;
+    display: table
+}
+
+.fullPageLayout {
+    max-width: 722px;
+    min-width: 326px
+}
+
+.twoColumnLayout-left,.twoColumnLayout-right,.twoRowTwoColumn-bottomLeft,.twoRowTwoColumn-bottomRight {
+    min-width: 326px;
+    max-width: 380px
+}
+
+.twoColumnLayout-left,.twoColumnRightLayout-left,.twoColumnLeftLayout-left,.twoRowTwoColumn-bottomLeft {
+    padding-left: 20px
+}
+
+.twoColumnLeftLayout-left,.twoColumnRightLayout-right {
+    width: 194px
+}
+
+.twoColumnLeftLayout-right,.twoColumnRightLayout-left {
+    min-width: 388px;
+    max-width: 566px
+}
+
+.ms-pub-contentLayout {
+    vertical-align: top
+}
+
+.ms-core-needIEFilter .ms-pub-contentLayout {
+    -ms-filter: ""
+}
+
+.left-column-area {
+    padding: 0 0 0 2px;
+    border: 0
+}
+
+.right-column-area {
+    padding: 0 2px 0 0;
+    border: 0
+}
