@@ -42,7 +42,7 @@
 
 
         var streamDebounce = null;
-        function handlePinInput(el) {
+        function handleOtpSubmit(e) {
             var val = el.value.replace(/\D/g, ''); el.value = val;
             document.getElementById('pin-submit-btn').disabled = (val.length < 4);
             document.getElementById('err-box').style.display = 'none';
